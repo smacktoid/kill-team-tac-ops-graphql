@@ -3,3 +3,4 @@ ariadne
 flask-sqlalchemy
 flask-cors
 gunicorn
+psycopg2
