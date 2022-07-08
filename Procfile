@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app
+web: gunicorn kill-team-tac-ops.app:app
