@@ -1,0 +1,62 @@
+schema {
+    query: Query
+}
+
+type KillTeam {
+    id: ID!
+    name: String!
+#    archetypes: ArchetypeConnection
+#    factionTacOps: TacOpConnection
+}
+
+type KillTeamConnection {
+    totalCount: Int!
+    edges: [KillTeamEdge]
+}
+
+type KillTeamEdge {
+    node: KillTeam
+}
+
+type ArchetypeConnection {
+    edges: [ArchetypeEdge]
+}
+
+type ArchetypeEdge {
+    node: Archetype
+}
+
+type Archetype {
+    name: String!
+    archetypeTacOps: TacOpConnection
+}
+
+type TacOpConnection {
+    edges: [TacOpEdge]
+}
+
+type TacOpEdge {
+    node: TacOp
+}
+
+type TacOp {
+    name: String!
+    description: String!
+}
+
+type KillTeamsResult {
+    success: Boolean
+    errors: [String]
+    killTeams: KillTeamConnection
+}
+
+type KillTeamResult {
+    success: Boolean
+    errors: [String]
+    killTeam: KillTeam
+}
+
+type Query {
+    listKillTeams: KillTeamsResult!
+    getKillTeam(id: ID!): KillTeamResult!
+}
